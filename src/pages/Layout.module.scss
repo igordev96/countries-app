@@ -1,0 +1,10 @@
+@use '../styles/_colors.scss';
+
+.container {
+  min-height: 100vh;
+  background-color: colors.$dark-blue-bg;
+}
+
+.content {
+  padding: 32px 56px;
+}
