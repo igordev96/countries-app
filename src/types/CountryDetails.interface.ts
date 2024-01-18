@@ -8,6 +8,10 @@ export interface CountryDetails {
   languages: Languages;
   borders: string[];
   population: number;
+  flags: {
+    png: string;
+    alt: string;
+  };
 }
 
 export interface Name {
