@@ -1,0 +1,42 @@
+@use '../styles/_colors.scss';
+@use '../styles/_typo.scss';
+
+.trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 4px;
+  background-color: colors.$dark-blue;
+  height: 36px;
+  width: 180px;
+  border: none;
+  outline: none;
+  padding: 4px 16px;
+  box-shadow: colors.$shadow;
+}
+
+.viewport {
+  padding: 8px;
+  width: 180px;
+}
+
+.content {
+  overflow: hidden;
+  background-color: colors.$dark-blue;
+  border-radius: 4px;
+  box-shadow: colors.$shadow;
+}
+
+.item {
+  font-size: 0.875rem;
+  color: colors.$dark-gray;
+  font-weight: typo.$light;
+  cursor: pointer;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  outline: none;
+  border: none;
+}

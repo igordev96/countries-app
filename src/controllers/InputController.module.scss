@@ -1,0 +1,34 @@
+@use '../styles/_colors.scss';
+
+.container {
+  position: relative;
+  width: 280px;
+  height: 36px;
+  border-radius: 4px;
+  background-color: colors.$dark-blue;
+  padding-left: 48px;
+  display: flex;
+  align-items: center;
+  box-shadow: colors.$shadow;
+}
+
+.icon {
+  position: absolute;
+  top: 18px;
+  left: 16px;
+  transform: translateY(-50%);
+}
+
+.input {
+  flex-grow: 1;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  color: colors.$white;
+  font-size: 0.875rem;
+
+  &::placeholder {
+    font-size: 0.875rem;
+    color: colors.$dark-gray;
+  }
+}
