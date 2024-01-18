@@ -1,0 +1,47 @@
+@use '../styles/_colors.scss';
+@use '../styles/_typo.scss';
+
+.card {
+  height: 260px;
+  background-color: colors.$dark-blue;
+  box-shadow: colors.$shadow;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 240ms;
+
+  &:hover {
+    transform: scale(1.04) translateY(-8px);
+  }
+}
+
+.image {
+  height: 50%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.content {
+  padding: 4px 16px;
+}
+
+.name {
+  font-size: 0.875rem;
+  font-weight: typo.$bold;
+  margin-bottom: 12px;
+}
+
+.label {
+  font-size: 0.75rem;
+  font-weight: typo.$light;
+  color: colors.$light-dark-gray;
+
+  &:not(:last-child) {
+    margin-bottom: 4px;
+  }
+
+  span {
+    color: colors.$white;
+    font-weight: typo.$medium;
+  }
+}

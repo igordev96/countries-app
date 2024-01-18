@@ -5,20 +5,15 @@ class CountriesAPI {
   constructor() {}
   baseURL = 'https://restcountries.com/v3.1';
 
-  getCountries(name?: string): Promise<AllCountries[]> {
-    if (name) {
-      return fetch(
-        `${this.baseURL}/name/${name}?fields=name,population,region,capital`
-      ).then((res) => res.json());
-    }
+  getCountries(): Promise<AllCountries[]> {
     return fetch(
-      `${this.baseURL}/all?fields=name,population,region,capital`
+      `${this.baseURL}/all?fields=name,population,region,capital,flags`
     ).then((res) => res.json());
   }
 
   getCountryDetails(name: string): Promise<CountryDetails> {
     return fetch(
-      `${this.baseURL}/name/${name}?fields=name,population,region,subregion,capital,tld,currencies,languages,borders`
+      `${this.baseURL}/name/${name}?fields=name,population,region,subregion,capital,tld,currencies,languages,borders,flags`
     )
       .then((res) => res.json())
       .then((data) => data[0]);

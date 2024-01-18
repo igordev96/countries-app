@@ -12,6 +12,9 @@
   border: none;
   outline: none;
   padding: 4px 16px;
+  font-size: 0.875rem;
+  color: colors.$light-dark-gray;
+  font-weight: typo.$light;
   box-shadow: colors.$shadow;
 }
 
@@ -29,7 +32,7 @@
 
 .item {
   font-size: 0.875rem;
-  color: colors.$dark-gray;
+  color: colors.$light-dark-gray;
   font-weight: typo.$light;
   cursor: pointer;
   height: 28px;
