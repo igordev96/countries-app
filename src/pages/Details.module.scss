@@ -1,0 +1,74 @@
+@use '../styles/_colors.scss';
+@use '../styles/_typo.scss';
+
+.back {
+  margin-top: 32px;
+}
+
+.content {
+  margin-top: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.image {
+  height: 320px;
+  width: 50%;
+  object-fit: cover;
+}
+
+.details {
+  width: 40%;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: typo.$bold;
+  margin-bottom: 32px;
+}
+
+.info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+}
+
+.first,
+.second {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  p {
+    font-size: 0.75rem;
+    font-weight: typo.$light;
+    color: colors.$light-dark-gray;
+
+    span {
+      font-weight: typo.$bold;
+      color: colors.$white;
+    }
+  }
+}
+
+.borders {
+  margin-top: 52px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  p {
+    font-size: 0.75rem;
+    font-weight: typo.$bold;
+    color: colors.$white;
+  }
+}
+
+.buttons {
+  width: 100%;
+  flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}

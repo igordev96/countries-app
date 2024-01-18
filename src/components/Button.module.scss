@@ -1,0 +1,20 @@
+@use 'sass:color';
+@use '../styles/_colors.scss';
+
+.button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 20px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: colors.$light-dark-gray;
+  background-color: colors.$dark-blue;
+  box-shadow: colors.$shadow;
+  transition: 240ms;
+
+  &:hover {
+    background-color: color.scale(colors.$dark-blue, $lightness: -10%);
+  }
+}

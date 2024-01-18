@@ -7,16 +7,14 @@ class CountriesAPI {
 
   getCountries(): Promise<AllCountries[]> {
     return fetch(
-      `${this.baseURL}/all?fields=name,population,region,capital,flags`
+      `${this.baseURL}/all?fields=name,population,region,capital,flags,cca3`
     ).then((res) => res.json());
   }
 
-  getCountryDetails(name: string): Promise<CountryDetails> {
+  getCountryDetails(cca3: string): Promise<CountryDetails> {
     return fetch(
-      `${this.baseURL}/name/${name}?fields=name,population,region,subregion,capital,tld,currencies,languages,borders,flags`
-    )
-      .then((res) => res.json())
-      .then((data) => data[0]);
+      `${this.baseURL}/alpha/${cca3}?fields=name,population,region,subregion,capital,tld,currencies,languages,borders,flags`
+    ).then((res) => res.json());
   }
 }
 
