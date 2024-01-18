@@ -1,6 +1,16 @@
 @use './_typo.scss';
 @use './colors.scss';
 
+:root {
+  --dark-blue: #2b3945;
+  --dark-blue-bg: #202c37;
+  --dark-blue-text: #111517;
+
+  --dark-gray: #858585;
+  --light-dark-gray: #fafafa;
+  --white: #ffffff;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -12,8 +22,15 @@ body {
   height: 100%;
   font-family: 'Nunito Sans', sans-serif;
   font-weight: typo.$medium;
-  color: colors.$white;
-  background-color: colors.$dark-blue-bg;
+  color: var(--white);
+  background-color: var(--dark-blue-bg);
+
+  body.light {
+    --white: #111517;
+    --dark-blue-bg: #fafafa;
+    --dark-blue: #ffffff;
+    --light-dark-gray: #111517;
+  }
 }
 
 button {
@@ -25,7 +42,7 @@ button {
 
 a {
   text-decoration: none;
-  color: colors.$white;
+  color: var(--white);
 }
 
 p,
@@ -36,7 +53,7 @@ h4,
 h5,
 h6 {
   font-weight: typo.$medium;
-  color: colors.$white;
+  color: var(--white);
 }
 
 ::-webkit-scrollbar {

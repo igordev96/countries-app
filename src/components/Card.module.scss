@@ -3,7 +3,7 @@
 
 .card {
   height: 260px;
-  background-color: colors.$dark-blue;
+  background-color: var(--dark-blue);
   box-shadow: colors.$shadow;
   border-radius: 4px;
   overflow: hidden;
@@ -34,14 +34,14 @@
 .label {
   font-size: 0.75rem;
   font-weight: typo.$light;
-  color: colors.$light-dark-gray;
+  color: var(--light-dark-gray);
 
   &:not(:last-child) {
     margin-bottom: 4px;
   }
 
   span {
-    color: colors.$white;
+    color: var(--white);
     font-weight: typo.$medium;
   }
 }

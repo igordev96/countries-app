@@ -3,15 +3,20 @@ import { useCountry } from '../hooks/useCountry';
 import { Button } from '../components/Button';
 import { ArrowLeft } from '@phosphor-icons/react';
 import styles from './Details.module.scss';
+import { useCountriesNames } from '../hooks/useCountriesNames';
 
 export function Details() {
   const { cca3 } = useParams<{ cca3: string }>();
   const { data, isSuccess, isLoading } = useCountry(cca3);
+  const {
+    data: bordersNames,
+    isSuccess: isSuccessBorders,
+    isLoading: isLoadingBorders,
+  } = useCountriesNames(data?.borders);
+
   const navigate = useNavigate();
 
   const handleBack = () => navigate(-1);
-
-  console.log(data);
 
   return (
     !isLoading &&
@@ -59,7 +64,7 @@ export function Details() {
               <div className={styles.second}>
                 <p>
                   <span>Top Level Domain: </span>
-                  {data.tld}
+                  {data.tld.join(' ')}
                 </p>
                 <p>
                   <span>Currencies: </span>
@@ -77,15 +82,17 @@ export function Details() {
             </div>
             <div className={styles.borders}>
               <p>Border Countries: </p>
-              <div className={styles.buttons}>
-                {data.borders.map((border) => (
-                  <Button
-                    onClick={() => navigate(`/${border}`)}
-                    title={border}
-                    key={border}
-                  />
-                ))}
-              </div>
+              {!isLoadingBorders && isSuccessBorders && (
+                <div className={styles.buttons}>
+                  {bordersNames.map((border) => (
+                    <Button
+                      onClick={() => navigate(`/${border.cca3}`)}
+                      title={border.name}
+                      key={border.cca3}
+                    />
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         </div>

@@ -3,10 +3,15 @@
 
 .container {
   padding: 16px 56px;
-  background-color: colors.$dark-blue;
+  background-color: var(--dark-blue);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-shadow: colors.$shadow;
+
+  @media (max-width: 480px) {
+    padding: 24px 16px;
+  }
 }
 
 .title {

@@ -9,12 +9,12 @@
   border-radius: 4px;
   font-size: 0.75rem;
   font-weight: 300;
-  color: colors.$light-dark-gray;
-  background-color: colors.$dark-blue;
+  color: var(--light-dark-gray);
+  background-color: var(--dark-blue);
   box-shadow: colors.$shadow;
   transition: 240ms;
 
   &:hover {
-    background-color: color.scale(colors.$dark-blue, $lightness: -10%);
+    filter: brightness(90%);
   }
 }

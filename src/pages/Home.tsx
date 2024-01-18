@@ -1,3 +1,4 @@
+import { X } from '@phosphor-icons/react';
 import { Card } from '../components/Card';
 import { InputController } from '../controllers/InputController';
 import { SelectController } from '../controllers/SelectController';
@@ -24,17 +25,23 @@ export function Home() {
     onSelectValueChange,
   } = useController();
 
+  const handleClear = () => {
+    onSelectValueChange('');
+  };
+
   return (
     !isLoading &&
     isSuccess && (
       <div>
         <div className={styles['search-container']}>
           <InputController
+            className={styles.input}
             value={inputValue}
             onChange={onInputValueChange}
             placeholder='Search for a country...'
           />
           <SelectController
+            className={styles.select}
             value={selectValue}
             onValueChange={onSelectValueChange}
             placeholder='Filter by Region'
@@ -67,6 +74,9 @@ export function Home() {
                 key={country.name.common}
               />
             ))}
+        </div>
+        <div onClick={handleClear} className={styles.clear}>
+          <X size={36} />
         </div>
       </div>
     )

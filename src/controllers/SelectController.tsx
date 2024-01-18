@@ -11,6 +11,7 @@ type Items = Array<{
 type SelectControllerProps = Select.SelectProps & {
   placeholder: string;
   items: Items;
+  className?: string;
 };
 
 type SelectItemProps = Select.SelectItemProps & { children: ReactNode };
@@ -30,11 +31,11 @@ const SelectItem = (props: SelectItemProps) => {
 };
 
 export function SelectController(props: SelectControllerProps) {
-  const { placeholder, items, ...rest } = props;
+  const { placeholder, className = '', items, ...rest } = props;
 
   return (
     <Select.Root {...rest}>
-      <Select.Trigger className={styles.trigger}>
+      <Select.Trigger className={`${styles.trigger} ${className}`}>
         <Select.Value placeholder={placeholder} />
         <Select.Icon>
           <CaretDown size={14} />

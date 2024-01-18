@@ -9,9 +9,9 @@ export const InputController = forwardRef<HTMLInputElement, InputController>(
     const { className = '', ...rest } = props;
 
     return (
-      <div className={styles.container}>
+      <div className={`${styles.container} ${className}`}>
         <MagnifyingGlass size={16} weight='bold' className={styles.icon} />
-        <input className={`${styles.input} ${className}`} {...rest} ref={ref} />
+        <input className={styles.input} {...rest} ref={ref} />
       </div>
     );
   }

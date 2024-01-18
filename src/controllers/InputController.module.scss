@@ -5,7 +5,7 @@
   width: 280px;
   height: 36px;
   border-radius: 4px;
-  background-color: colors.$dark-blue;
+  background-color: var(--dark-blue);
   padding-left: 48px;
   display: flex;
   align-items: center;
@@ -24,11 +24,11 @@
   background-color: transparent;
   outline: none;
   border: none;
-  color: colors.$white;
+  color: var(--white);
   font-size: 0.875rem;
 
   &::placeholder {
     font-size: 0.875rem;
-    color: colors.$dark-gray;
+    color: var(--dark-gray);
   }
 }
