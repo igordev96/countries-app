@@ -1,11 +1,14 @@
+import { Link, LinkProps } from 'react-router-dom';
 import { AllCountries } from '../types/AllCountries.interface';
 import styles from './Card.module.scss';
 
-export function Card(props: AllCountries) {
-  const { flags, name, capital, population, region } = props;
+type CardProps = AllCountries & LinkProps;
+
+export function Card(props: CardProps) {
+  const { flags, name, capital, population, region, ...rest } = props;
 
   return (
-    <div className={styles.card}>
+    <Link className={styles.card} {...rest}>
       <img className={styles.image} src={flags.png} alt={flags.alt} />
       <div className={styles.content}>
         <h2 className={styles.name}>{name.common}</h2>
@@ -22,6 +25,6 @@ export function Card(props: AllCountries) {
           {capital.join(', ')}
         </p>
       </div>
-    </div>
+    </Link>
   );
 }

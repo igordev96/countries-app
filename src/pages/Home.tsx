@@ -61,7 +61,11 @@ export function Home() {
               return country;
             })
             .map((country) => (
-              <Card {...country} key={country.name.common} />
+              <Card
+                to={`/${country.cca3}`}
+                {...country}
+                key={country.name.common}
+              />
             ))}
         </div>
       </div>

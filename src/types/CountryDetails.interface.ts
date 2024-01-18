@@ -1,5 +1,6 @@
 export interface CountryDetails {
   name: Name;
+  cca3: string;
   tld: string[];
   currencies: Currencies;
   capital: string[];
@@ -9,7 +10,7 @@ export interface CountryDetails {
   borders: string[];
   population: number;
   flags: {
-    png: string;
+    svg: string;
     alt: string;
   };
 }
